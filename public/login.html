@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Bejelentkezés</h1>
+    <form action="/login" method="post">
+        <label for="username">Felhasználó:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Kód:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Bejelentkezés</button>
+    </form>
+    <a href="/register">Nincs fiókod? Új létrehozása.</a>
+    <br>
+    <a href="/admin-login">Admin Bejelentkezés</a> <!-- Add this line -->
+</body>
+
+</html>

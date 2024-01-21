@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shift Scheduler</title>
+</head>
+
+<body>
+  <h1>Shift Scheduler</h1>
+  <form id="shiftForm">
+    <label for="day">Day:</label>
+    <input type="text" id="day" name="day" required>
+    <br>
+    <button type="submit">Request Shift</button>
+  </form>
+
+  <a href="/logout">Logout</a>
+
+  <script>
+    document.getElementById('shiftForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const user = document.getElementById('user').value;
+      const day = document.getElementById('day').value;
+
+      fetch('/request-shift', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `user=${encodeURIComponent(user)}&day=${encodeURIComponent(day)}`,
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Shift requested successfully.');
+          } else {
+            alert('Failed to request shift.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>
