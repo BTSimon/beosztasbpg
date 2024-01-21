@@ -1,0 +1,7 @@
+{
+    "app_id": "beosztas-bpgvetites-estro",
+    "config_version": 20210101,
+    "name": "beosztas-bpgvetites",
+    "provider_region": "aws-eu-central-1",
+    "deployment_model": "LOCAL"
+}
